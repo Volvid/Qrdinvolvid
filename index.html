@@ -5,43 +5,72 @@
   <title></title>
   <style>
       body {
-        background-color: lightblue;
-        text-align: center;
+        background-color: darkgreen;
+        text-align: middle;
       }
       
-      .lds-ring {
+     .lds-heart {
+  /* change color here */
+  color: #1c4c5b
+}
+.lds-heart,
+.lds-heart div,
+.lds-heart div:after,
+.lds-heart div:before {
+  box-sizing: border-box;
+}
+.lds-heart {
   display: inline-block;
   position: relative;
   width: 80px;
   height: 80px;
+  transform: rotate(45deg);
+  transform-origin: 40px 40px;
 }
-.lds-ring div {
-  box-sizing: border-box;
-  display: block;
+.lds-heart div {
+  top: 28px;
+  left: 28px;
   position: absolute;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  border: 8px solid #fff;
-  border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #fff transparent transparent transparent;
+  width: 32px;
+  height: 32px;
+  background: currentColor;
+  animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
+.lds-heart div:after,
+.lds-heart div:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: currentColor;
 }
-.lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
+.lds-heart div:before {
+  left: -24px;
+  border-radius: 50% 0 0 50%;
 }
-.lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
+.lds-heart div:after {
+  top: -24px;
+  border-radius: 50% 50% 0 0;
 }
-@keyframes lds-ring {
+@keyframes lds-heart {
   0% {
-    transform: rotate(0deg);
+    transform: scale(0.95);
+  }
+  5% {
+    transform: scale(1.1);
+  }
+  39% {
+    transform: scale(0.85);
+  }
+  45% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(0.95);
   }
   100% {
-    transform: rotate(360deg);
+    transform: scale(0.9);
   }
 }
 
@@ -69,7 +98,7 @@
 
   </script>
   
-  <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+<div class="lds-heart"><div></div></div>
   
   
 </body>
